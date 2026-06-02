@@ -16,7 +16,7 @@ theme = "high-contrast"
 
 [palette]
 layout = "contextual"
-pinned = ["file.open", "file.save", "help.open"]
+pinned = ["file.open", "file.save", "help.show"]
 hidden = []
 group_order = ["File", "Edit", "View", "Tools", "Help"]
 density = "comfortable"
@@ -30,7 +30,8 @@ soft_wrap = false
 show_line_numbers = true
 
 [keys]
-"alt+p" = "palette.open"
+"alt+p" = "palette.commands"
+"alt+\\" = "view.toggle_columns"
 ```
 
 ## UI

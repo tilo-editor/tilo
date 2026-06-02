@@ -6,8 +6,8 @@ Tilo is a terminal-native code editor for developers who live in shells, SSH
 sessions, containers, headless VMs, and fast keyboard workflows.
 
 It is built around tiles: buffers, Markdown previews, diagnostics, command
-surfaces, settings, help, timeline history, terminals, and future agent panes
-arranged as one clean TUI workspace.
+surfaces, settings, help, timeline history, and future agent panes arranged as
+one clean TUI workspace.
 
 ```text
 +-----+-----+-----+
@@ -62,13 +62,14 @@ Useful first keys:
 - `Ctrl+P`: open file
 - `F1`: help
 - `Alt+,`: settings
-- `Alt+M`: Markdown preview/split
+- `Alt+M`: Markdown source/preview split
+- `Alt+\`: two-column continuous editor view
 - `Alt+T`: timeline
 - `Ctrl+S`: save
 - `Ctrl+Q`: quit
 
 Mouse support is enabled for buttons, tabs, palette items, settings controls,
-and timeline interaction where the terminal supports it.
+two-column editing, and timeline interaction where the terminal supports it.
 
 ## Why Use Tilo
 
@@ -99,7 +100,8 @@ Current preview features:
 - Command palette with contextual commands and mouse-clickable rows.
 - TUI settings backed by `~/.config/tilo/config.toml`.
 - Built-in help/about surface.
-- Markdown preview and split editing.
+- Markdown source/preview split editing with live preview.
+- Two-column continuous editor view for seeing more of one file at once.
 - Timeline view for buffer history.
 - Diagnostics/problem panel from run output and LSP.
 - LSP hooks for diagnostics, completion, hover, and go-to-definition.
@@ -116,6 +118,20 @@ The current preview supports prebuilt binaries for:
 - Linux x86_64
 
 Windows binaries are intentionally not part of the first preview release.
+
+## Split Views
+
+Tilo currently has two split-style surfaces:
+
+- `Alt+M`: Markdown source/preview split. The source stays editable on the left
+  while the rendered preview tracks it on the right. Narrow terminals fall back
+  to a full-window preview.
+- `Alt+\`: two-column continuous editor view. The active file is rendered as two
+  side-by-side columns, with the right column continuing after the left. This is
+  useful for scanning long files and needs a terminal at least 64 columns wide.
+
+The general multi-pane layout system is still a v2 proposal; the current
+two-column view is a rendering mode for one buffer, not arbitrary pane splitting.
 
 ## Configuration
 
