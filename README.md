@@ -108,7 +108,7 @@ Current preview features:
 - Soft wrap, line numbers, search, file open, save, save as, and session restore.
 - No telemetry in v1 preview.
 
-Release `v0.1.0` supports prebuilt binaries for:
+The current preview supports prebuilt binaries for:
 
 - macOS arm64
 - macOS x86_64
