@@ -151,6 +151,10 @@ Theme directory:
 Tilo can be configured from inside the editor with `Alt+,`, or by editing the
 config file directly.
 
+The settings screen exposes toolbar/theme, update checks, command palette
+layout and appearance, editor defaults, keybinding entry points, config reload,
+and reset-to-defaults.
+
 Update checks are manual by default. Run `Check for Updates` from the command
 palette or settings screen, or set `updates.check = "weekly"` for a quiet
 weekly notice when a newer public release exists.

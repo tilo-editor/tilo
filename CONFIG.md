@@ -7,6 +7,21 @@ file directly or use the in-editor settings screen.
 ~/.config/tilo/config.toml
 ```
 
+## In-editor settings
+
+Open settings with `Alt+,`.
+
+The settings screen can directly change scalar options such as toolbar
+visibility, theme, update checks, palette layout/appearance, soft wrap, line
+numbers, tab size, mouse wheel step, and completion prefix length.
+
+List-like settings are still edited in the config file because they are command
+ID arrays or key/value maps. From settings, `Pinned commands`, `Hidden commands`,
+`Group order`, and `Keybindings` open `config.toml` for direct editing.
+
+Use `Reload config` after hand-editing the file. `Reset defaults` writes the
+built-in default config back to disk.
+
 ## Example
 
 ```toml
