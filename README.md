@@ -102,6 +102,7 @@ Current preview features:
 - Built-in help/about surface.
 - Markdown source/preview split editing with live preview.
 - Two-column continuous editor view for seeing more of one file at once.
+- Manual update checks, with optional weekly passive notices.
 - Timeline view for buffer history.
 - Diagnostics/problem panel from run output and LSP.
 - LSP hooks for diagnostics, completion, hover, and go-to-definition.
@@ -150,10 +151,15 @@ Theme directory:
 Tilo can be configured from inside the editor with `Alt+,`, or by editing the
 config file directly.
 
+Update checks are manual by default. Run `Check for Updates` from the command
+palette or settings screen, or set `updates.check = "weekly"` for a quiet
+weekly notice when a newer public release exists.
+
 See [CONFIG.md](CONFIG.md) for:
 
 - editor settings
 - palette layout
+- update checks
 - pinned/hidden commands
 - keybindings
 - theme keys

@@ -29,6 +29,9 @@ completion_min_prefix = 2
 soft_wrap = false
 show_line_numbers = true
 
+[updates]
+check = "manual"
+
 [keys]
 "alt+p" = "palette.commands"
 "alt+\\" = "view.toggle_columns"
@@ -55,6 +58,14 @@ show_line_numbers = true
 - `completion_min_prefix`: minimum completion prefix length
 - `soft_wrap`: wrap long lines
 - `show_line_numbers`: show line numbers
+
+## Updates
+
+- `check`: `off`, `manual`, or `weekly`
+
+`manual` is the default. Tilo only checks for a new public release when you run
+`Check for Updates` from the command palette or settings screen. `weekly` adds a
+quiet non-blocking startup check at most once per week.
 
 ## Themes
 
