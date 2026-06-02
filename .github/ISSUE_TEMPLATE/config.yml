@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Install guide
+    url: https://github.com/tilo-editor/tilo/blob/main/INSTALL.md
+    about: Check install docs before opening an install issue.
+  - name: Configuration guide
+    url: https://github.com/tilo-editor/tilo/blob/main/CONFIG.md
+    about: Config, palette, keybindings, and themes.
