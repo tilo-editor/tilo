@@ -29,7 +29,6 @@ curl -fsSL https://raw.githubusercontent.com/tilo-editor/tilo/main/install.sh | 
 - `tilo_Darwin_x86_64.tar.gz`
 - `tilo_Linux_arm64.tar.gz`
 - `tilo_Linux_x86_64.tar.gz`
-- `tilo_Windows_x86_64.zip`
 
 ## Verify
 
