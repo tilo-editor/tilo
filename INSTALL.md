@@ -1,6 +1,20 @@
 # Install Tilo
 
-## macOS and Linux
+## Homebrew
+
+```sh
+brew tap tilo-editor/tap
+brew install tilo
+```
+
+Upgrade later:
+
+```sh
+brew update
+brew upgrade tilo
+```
+
+## One-Line Installer
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/tilo-editor/tilo/main/install.sh | sh
@@ -29,6 +43,8 @@ curl -fsSL https://raw.githubusercontent.com/tilo-editor/tilo/main/install.sh | 
 - `tilo_Darwin_x86_64.tar.gz`
 - `tilo_Linux_arm64.tar.gz`
 - `tilo_Linux_x86_64.tar.gz`
+
+Windows binaries are not shipped in the first preview release.
 
 ## Verify
 

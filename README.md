@@ -3,60 +3,194 @@
 **Tilo - the tiled terminal editor.**
 
 Tilo is a terminal-native code editor for developers who live in shells, SSH
-sessions, headless machines, and fast keyboard workflows. It keeps the feel of a
-real TUI: tiled panes, command palette, timeline, settings, help, Markdown
-preview, diagnostics, and mouse support without pretending to be a GUI app.
+sessions, containers, headless VMs, and fast keyboard workflows.
+
+It is built around tiles: buffers, Markdown previews, diagnostics, command
+surfaces, settings, help, timeline history, terminals, and future agent panes
+arranged as one clean TUI workspace.
+
+```text
++-----+-----+-----+
+| ### | ### | ### |
++-----+-----+-----+
+|     | ### |  |  |
++-----+-----+-----+
+|     | ### |     |
++-----+-----+-----+
+```
 
 > Tilo turns the terminal into a tiled coding workspace.
 
 ## Install
 
-macOS and Linux:
+Homebrew:
+
+```sh
+brew tap tilo-editor/tap
+brew install tilo
+```
+
+macOS and Linux installer:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/tilo-editor/tilo/main/install.sh | sh
 ```
 
-Manual downloads are available from
-[GitHub Releases](https://github.com/tilo-editor/tilo/releases).
+Manual downloads:
 
-After installing:
+```text
+https://github.com/tilo-editor/tilo/releases
+```
+
+Verify:
 
 ```sh
 tilo --version
+tilo --help
+```
+
+## Quick Start
+
+```sh
 tilo README.md
 tilo .
 ```
 
-## Why Tilo
+Useful first keys:
 
-- Terminal-native editing for local shells, SSH, VMs, and containers.
-- Tiled workspace model for files, previews, diagnostics, terminals, and future
-  agent panes.
-- Fast command palette and keyboard-first navigation.
-- Markdown split preview, timeline, settings, themes, and built-in help.
-- No telemetry in v1.
+- `Alt+P` or `F2`: command palette
+- `Ctrl+P`: open file
+- `F1`: help
+- `Alt+,`: settings
+- `Alt+M`: Markdown preview/split
+- `Alt+T`: timeline
+- `Ctrl+S`: save
+- `Ctrl+Q`: quit
+
+Mouse support is enabled for buttons, tabs, palette items, settings controls,
+and timeline interaction where the terminal supports it.
+
+## Why Use Tilo
+
+Tilo is for developers who want an editor that belongs in the terminal instead
+of a GUI editor projected into a terminal-shaped window.
+
+Good fits:
+
+- Editing over SSH without forwarding a full desktop app.
+- Working inside containers, remote shells, cloud VMs, and recovery sessions.
+- Keeping editor, command output, diagnostics, and notes close to the shell.
+- Using a low-latency keyboard-first editor with enough mouse affordances to be
+  discoverable.
+- Running on machines where installing a full IDE is heavy or impractical.
+- Building toward AI/agent workflows that should live beside code, not outside
+  the terminal session.
+
+Tilo is not trying to replace every mature IDE feature on day one. The goal is a
+small, fast, terminal-native workspace that earns trust by doing the core
+editing loop well.
+
+## Features
+
+Current preview features:
+
+- Terminal-native editor built in Go with Bubble Tea/Lip Gloss.
+- Tiled mental model with tabs, preview panes, overlays, and modal tools.
+- Command palette with contextual commands and mouse-clickable rows.
+- TUI settings backed by `~/.config/tilo/config.toml`.
+- Built-in help/about surface.
+- Markdown preview and split editing.
+- Timeline view for buffer history.
+- Diagnostics/problem panel from run output and LSP.
+- LSP hooks for diagnostics, completion, hover, and go-to-definition.
+- Multi-cursor editing.
+- Themes and user theme files.
+- Soft wrap, line numbers, search, file open, save, save as, and session restore.
+- No telemetry in v1 preview.
+
+Release `v0.1.0` supports prebuilt binaries for:
+
+- macOS arm64
+- macOS x86_64
+- Linux arm64
+- Linux x86_64
+
+Windows binaries are intentionally not part of the first preview release.
 
 ## Configuration
 
-Config lives at:
+Config file:
 
 ```text
 ~/.config/tilo/config.toml
 ```
 
-See [CONFIG.md](CONFIG.md) for settings, palette customization, keybindings,
-and themes.
+Theme directory:
+
+```text
+~/.config/tilo/themes/
+```
+
+Tilo can be configured from inside the editor with `Alt+,`, or by editing the
+config file directly.
+
+See [CONFIG.md](CONFIG.md) for:
+
+- editor settings
+- palette layout
+- pinned/hidden commands
+- keybindings
+- theme keys
+- custom theme files
+
+## Install Details
+
+See [INSTALL.md](INSTALL.md) for:
+
+- Homebrew install
+- one-line installer
+- manual release downloads
+- checksum verification
+- custom install directories
+
+## Reporting Bugs
+
+Use [GitHub Issues](https://github.com/tilo-editor/tilo/issues).
+
+Issue templates are enabled for:
+
+- bug reports
+- feature requests
+
+When reporting a bug, include:
+
+- `tilo --version`
+- OS and CPU architecture
+- terminal app
+- shell
+- reproduction steps
+- screenshots or terminal recordings when useful
+
+See [SUPPORT.md](SUPPORT.md) for support expectations and report details.
+
+## Security
+
+Tilo v1 preview has no telemetry.
+
+Do not post secrets, proprietary source, or private logs in public issues. See
+[SECURITY.md](SECURITY.md) for security reporting guidance.
 
 ## Source Availability
 
 Tilo source is private during the early release period. This public repository
-hosts documentation, issue tracking, install scripts, and binary releases.
+hosts:
 
-## Support
-
-Use [GitHub Issues](https://github.com/tilo-editor/tilo/issues) for bug reports
-and release feedback. See [SUPPORT.md](SUPPORT.md).
+- install docs
+- configuration docs
+- issue tracking
+- release binaries
+- checksums
+- public support material
 
 ## License
 
