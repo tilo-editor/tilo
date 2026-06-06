@@ -65,11 +65,17 @@ Useful first keys:
 - `Alt+M`: Markdown source/preview split
 - `Alt+\`: two-column continuous editor view
 - `Alt+T`: timeline
+- `Alt+F`: format document
+- `Alt+G`: source control
+- `Alt+B`: inline blame for the current line
+- `Alt+S`: stage the change hunk under the cursor
+- `Alt+Up` / `Alt+Down`: previous / next Git change
 - `Ctrl+S`: save
 - `Ctrl+Q`: quit
 
 Mouse support is enabled for buttons, tabs, palette items, settings controls,
-two-column editing, and timeline interaction where the terminal supports it.
+two-column editing, source control, branch picking, and timeline interaction
+where the terminal supports it.
 
 ## Why Use Tilo
 
@@ -100,6 +106,13 @@ Current preview features:
 - Command palette with contextual commands and mouse-clickable rows.
 - TUI settings backed by `~/.config/tilo/config.toml`.
 - Built-in help/about surface.
+- Source Control panel with status, diffs, stage/unstage/discard, commit,
+  push, pull, fetch, and branch switching.
+- Git gutter with added/modified/deleted line markers, next/previous change
+  navigation, inline blame, and hunk-level stage/revert.
+- Format Document for Go, JSON, YAML, TOML, and XML, with safe built-in
+  fallbacks and optional Taplo install for deep TOML formatting.
+- Higher-quality syntax highlighting for JSON, TOML, YAML, and XML.
 - Markdown source/preview split editing with live preview.
 - Two-column continuous editor view for seeing more of one file at once.
 - Manual update checks, with optional weekly passive notices.
@@ -119,6 +132,35 @@ The current preview supports prebuilt binaries for:
 - Linux x86_64
 
 Windows binaries are intentionally not part of the first preview release.
+
+## Source Control
+
+Tilo shells out to the local `git` executable and keeps source control
+terminal-native:
+
+- `Alt+G` opens Source Control.
+- `Alt+Up` / `Alt+Down` jumps between changed hunks in the active file.
+- `Alt+B` toggles a current-line blame bar.
+- `Alt+S` stages the hunk under the cursor.
+- `Git: Revert Hunk` is available from the command palette or Git ribbon.
+- `Git: Switch Branch...` opens a branch picker; `n` starts a new branch command.
+
+Hunk stage/revert requires the file to be saved so cursor line numbers match the
+working tree diff. Revert happens in the buffer and is undoable; stage uses
+`git apply --cached` and is atomic.
+
+## Formatting And Highlighting
+
+`Alt+F` formats the active document when Tilo knows the file type:
+
+- Go: built-in `go/format`.
+- JSON: built-in `encoding/json`, which also validates.
+- YAML: built-in `yaml.v3`, preserving comments and key order.
+- TOML: built-in whitespace tidy; use `Install TOML Formatter (taplo)` for deep
+  formatting.
+- XML: `xmllint` when available, otherwise built-in whitespace tidy.
+
+JSON, TOML, YAML, and XML use Chroma-backed highlighting in the default build.
 
 ## Split Views
 
@@ -168,6 +210,11 @@ See [CONFIG.md](CONFIG.md) for:
 - keybindings
 - theme keys
 - custom theme files
+
+See [GUIDE.md](GUIDE.md) for a practical tour of editing, source control,
+formatting, split views, settings, and current preview constraints.
+
+See [CHANGELOG.md](CHANGELOG.md) for release highlights.
 
 ## Install Details
 

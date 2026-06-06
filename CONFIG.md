@@ -82,6 +82,27 @@ check = "manual"
 `Check for Updates` from the command palette or settings screen. `weekly` adds a
 quiet non-blocking startup check at most once per week.
 
+## Useful command IDs
+
+Keybindings map a key chord to a command ID in the `[keys]` section.
+
+Common IDs:
+
+- `palette.commands`: command palette
+- `palette.files`: file picker
+- `edit.format`: format document
+- `format.install_toml`: install Taplo for deep TOML formatting
+- `git.panel`: source control
+- `git.switch_branch`: branch picker
+- `git.toggle_blame`: inline blame
+- `git.stage_hunk`: stage hunk under cursor
+- `git.revert_hunk`: revert hunk under cursor
+- `git.next_change`: next changed hunk
+- `git.prev_change`: previous changed hunk
+- `view.toggle_columns`: two-column view
+- `markdown.preview`: Markdown preview
+- `timeline.open`: timeline
+
 ## Themes
 
 Built-in themes:
